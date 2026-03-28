@@ -231,7 +231,6 @@
  }
 
  /* ABOUT */
-
  .about-container {
      display: flex;
      gap: 50px;
@@ -241,11 +240,14 @@
 
  .about-text {
      flex: 1;
+     min-width: 280px;
+     /* ensure text doesn't shrink too much */
  }
 
  .about-image {
      flex: 1;
      text-align: center;
+     min-width: 280px;
  }
 
  .about-image img {
@@ -254,6 +256,31 @@
      border-radius: 15px;
      background: #f3f3f3;
      padding: 20px;
+ }
+
+ /* Responsive for mobile */
+ @media (max-width: 768px) {
+     .about-container {
+         flex-direction: column;
+         text-align: center;
+         gap: 30px;
+     }
+
+     .about-text {
+         order: 2;
+         /* optional, text below image */
+     }
+
+     .about-image {
+         order: 1;
+         /* image first on mobile */
+     }
+
+     .about-text p {
+         font-size: 16px;
+         /* smaller font for mobile */
+         line-height: 1.6;
+     }
  }
 
  .name1 {

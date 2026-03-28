@@ -735,7 +735,7 @@
  @media (max-width: 480px) {
 
      .welcome-container {
-         padding: 40px 5%;
+         padding: 30px 5%;
          flex-direction: column;
          overflow: hidden;
          /* FIX */

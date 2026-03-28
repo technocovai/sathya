@@ -295,8 +295,7 @@
      font-size: 25px;
  }
 
- /* VISION MISSION */
-
+ /* VISION & MISSION */
  .vision-mission {
      display: flex;
      flex-wrap: wrap;
@@ -305,21 +304,23 @@
      background: #f5f7fb;
  }
 
- .vision-box {
+ .vision-box,
+ .mission-box {
      flex: 1;
+     min-width: 280px;
+     padding: 50px 35px;
+     border-radius: 15px;
+     text-align: center;
+ }
+
+ .vision-box {
      background: #0c2a97;
      color: white;
-     padding: 50px 35px;
-     text-align: center;
-     border-radius: 15px;
  }
 
  .mission-box {
-     flex: 1;
      background: #c91e8b;
      color: white;
-     padding: 50px 35px;
-     border-radius: 15px;
  }
 
  .vision-box:hover,
@@ -328,12 +329,29 @@
      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
  }
 
- @media(max-width:768px) {
+ /* Mobile Responsive */
+ @media (max-width: 768px) {
      .vision-mission {
          flex-direction: column;
+         padding: 40px 20px;
+     }
+
+     .vision-box,
+     .mission-box {
+         padding: 30px 20px;
+     }
+
+     .vision-box h2,
+     .mission-box h2 {
+         font-size: 28px;
+     }
+
+     .vision-box p,
+     .mission-box p {
+         font-size: 15px;
+         line-height: 1.6;
      }
  }
-
 
  /* VALUES */
 

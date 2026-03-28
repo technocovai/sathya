@@ -706,7 +706,7 @@
      transform: scale(1.05);
  }
 
- @media (max-width:768px) {
+ @media (max-width: 768px) {
 
      .welcome-container {
          flex-direction: column;
@@ -714,13 +714,22 @@
      }
 
      .welcome-text h2 {
-         font-size: 32px;
+         font-size: 30px;
+     }
+
+     .welcome-text p {
+         font-size: 16px;
      }
 
      .welcome-image img {
-         max-width: 90%;
+         max-width: 300px;
+         margin-top: 20px;
      }
 
+     /* Stats: 2 per row */
+     .stats-container {
+         grid-template-columns: repeat(2, 1fr);
+     }
  }
 
  @media (max-width: 480px) {

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careers at TechnoCovai</title>
+
+
+    <link rel="icon" href="img/logo_title.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins
+        }
+
+        body {
+            background: #f4f6fb;
+            color: #333
+        }
+
+        /* Navbar 1 */
+        .navbar-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            background: white;
+            color: rgb(94, 15, 241);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-1 .logo img {
+            height: 70px;
+        }
+
+        .navbar-1 .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+
+
+        }
+
+        .navbar-1 .menu li {
+            position: relative;
+        }
+
+        .navbar-1 .menu li a {
+            text-decoration: none;
+            color: #002f6c;
+            font-weight: 500;
+            padding: 8px 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .navbar-1 .menu li a:hover {
+            background-color: #ff00d9;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .navbar-1 .menu li .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: rgba(52, 9, 194, 0.9);
+            border-radius: 6px;
+            list-style: none;
+            padding: 8px 0;
+            min-width: 180px;
+
+            z-index: 9999;
+        }
+
+        .navbar-1 .menu li:hover .dropdown {
+            display: block;
+        }
+
+        .navbar-1 .menu li .dropdown li a {
+            display: block;
+            padding: 8px 15px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .navbar-1 .menu li .dropdown li a:hover {
+            background: #ff00d9;
+            color: white;
+        }
+
+        .navbar-1 .nav-log-btn p {
+            background: #0d0db6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .navbar-1 .nav-log-btn p:hover {
+            transform: scale(1.1);
+            background-color: #cb14af;
+        }
+
+        .navbar-1.shrink {
+            padding: 6px 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .navbar-1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-1 .menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-1 .menu li .dropdown {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+        }
+
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* JOB CARDS */
+        .job {
+            background: #fff;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .job h2 {
+            color: #4f46e5;
+            margin-bottom: 10px;
+        }
+
+        .job ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .job li {
+            margin: 6px 0;
+        }
+
+        /* FORM */
+        .form-section {
+            background: #fff;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        button {
+            background: #4f46e5;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /*footer*/
+        .footer {
+            background: #002f6c;
+            color: #ffffff;
+            padding: 60px 20px 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1 1 220px;
+            margin: 20px;
+        }
+
+        .footer-section h2,
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section li,
+        .footer-section a {
+            color: #ffffffcc;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li:hover a {
+            color: #ff00d9;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a {
+            display: inline-block;
+            margin-right: 10px;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a:hover {
+            color: #ff00d9;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0 0;
+            border-top: 1px solid #ffffff33;
+            font-size: 14px;
+            color: #ffffffcc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin: 20px 0;
+            }
+        }
+
+        .footer-section.contact a {
+            color: #ffffffcc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section.contact a:hover {
+            color: #ff00d9;
+            /* Accent color on hover */
+            text-decoration: underline;
+        }
+    </style>
+
+    <style>
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+        }
+
+        .loader-box {
+            text-align: center;
+            color: white;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ccc;
+            border-top: 5px solid #00f0ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/professional-shared.css">
+</head>
+
+<body>
+
+    <div id="loader" style="display:none;">
+        <div class="loader-box">
+            <div class="spinner"></div>
+            <p>Submitting your application...</p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar-1 navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="img/final_logo.png" alt="Technocovai Logo">
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="menu navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">
+                            <i class="fa-solid fa-box"></i> Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html#services">
+                            <i class="fa-solid fa-gears"></i> Services
+                        </a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+
+                            <i class="fa-solid fa-graduation-cap"></i> Internships
+                        </a>
+
+                        <ul class="dropdown-menu dropdown">
+
+                            <li><a class="dropdown-item" href="fullstack.html">
+                                    <i class="fa-solid fa-code"></i> Full Stack
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="datascience.html">
+                                    <i class="fa-solid fa-database"></i> Data Science
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="powerbi.html">
+                                    <i class="fa-solid fa-chart-column"></i> Power BI
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="cybersecurity.html">
+                                    <i class="fa-solid fa-shield-halved"></i> Cyber Security
+                                </a></li>
+                            <li><a class="dropdown-item" href="iot.html">
+                                    <i class="fa-solid fa-signal"></i> Embedded & IoT
+                                </a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fa-solid fa-blog"></i> Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./career.html">
+                            <i class="fa-solid fa-briefcase"></i> Career
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">
+                            <i class="fa-solid fa-envelope"></i> Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-log-btn nav-link" href="./loginpage.html">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <header>
+        <h1>Careers at TechnoCovai</h1>
+        <p>Join Our Team & Build Your Future</p>
+    </header>
+
+    <div class="container">
+
+        <!-- FULL STACK JAVA -->
+        <div class="job">
+            <h2>Full Stack Java Developer (2 Positions)</h2>
+            <p>We are looking for skilled Full Stack Java Developers to build scalable web applications.</p>
+            <ul>
+                <li>Strong knowledge in Java, Spring Boot</li>
+                <li>Frontend: HTML, CSS, JavaScript</li>
+                <li>Database: MySQL</li>
+                <li>Good problem-solving skills</li>
+            </ul>
+        </div>
+
+        <!-- FULL STACK PYTHON -->
+        <div class="job">
+            <h2>Full Stack Python Developer (3 Positions)</h2>
+            <p>Develop dynamic web applications using Python frameworks.</p>
+            <ul>
+                <li>Python, Django / Flask</li>
+                <li>Frontend technologies</li>
+                <li>REST API development</li>
+                <li>Database knowledge</li>
+            </ul>
+            <a class="btn btn-primary" href="#register">Apply Now</a>
+        </div>
+
+        <!-- CYBER SECURITY -->
+        <div class="job">
+            <h2>Cyber Security Analyst (2 Positions)</h2>
+            <p>Protect systems and networks from cyber threats.</p>
+            <ul>
+                <li>Ethical hacking basics</li>
+                <li>Network security</li>
+                <li>Vulnerability testing</li>
+                <li>Security tools knowledge</li>
+            </ul>
+            <a class="btn btn-primary" href="#register">Apply Now</a>
+        </div>
+
+        <!-- DIGITAL MARKETING -->
+        <div class="job">
+            <h2>Digital Marketing Manager (2 Positions)</h2>
+            <p>Plan and execute digital marketing strategies.</p>
+            <ul>
+                <li>SEO & SEM knowledge</li>
+                <li>Social media marketing</li>
+                <li>Content marketing</li>
+                <li>Google Ads & Analytics</li>
+            </ul>
+            <a class="btn btn-primary" href="#register">Apply Now</a>
+        </div>
+
+        <!-- EMBEDDED & IOT -->
+        <div class="job">
+            <h2>Embedded Systems & IoT Engineer (1 Position)</h2>
+            <p>Work on hardware-based projects and IoT systems.</p>
+            <ul>
+                <li>Microcontrollers (Arduino, Raspberry Pi)</li>
+                <li>IoT protocols</li>
+                <li>Embedded C programming</li>
+                <li>Sensor integration</li>
+            </ul>
+            <a class="btn btn-primary" href="#register">Apply Now</a>
+        </div>
+
+        <!-- APPLICATION FORM -->
+        <div class="form-section" id="register" style="scroll-margin-top: 80px;;">
+            <h2>Apply Now</h2>
+
+            <form id="jobForm">
+
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+
+                <div class="form-group">
+                    <select name="position" required>
+                        <option value="">Select Position</option>
+                        <option>Full Stack Java Developer</option>
+                        <option>Full Stack Python Developer</option>
+                        <option>Cyber Security Analyst</option>
+                        <option>Digital Marketing Manager</option>
+                        <option>Embedded & IoT Engineer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="Your Message / Experience"></textarea>
+                </div>
+
+                <button type="submit">Submit Application</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        const form = document.getElementById("jobForm");
+        const loader = document.getElementById("loader");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // 👉 SHOW LOADER
+            loader.style.display = "flex";
+
+            const data = new URLSearchParams({
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                position: form.position.value,
+                message: form.message.value
+            });
+
+            fetch("https://script.google.com/macros/s/AKfycbxHo_Tk6mBQ9UBLWfxoFRSUw2w62Eib4JddMRzUC6PSPSvcammx_oQT-ZmjGH6-mKBn/exec", {
+                method: "POST",
+                body: data
+            })
+                .then(() => {
+                    setTimeout(() => {
+                        loader.style.display = "none";
+                        alert("Application Submitted Successfully!");
+                        form.reset();
+                    }, 1500);
+                })
+                .catch(() => {
+                    loader.style.display = "none";
+                    alert("Error submitting form");
+                });
+        });
+    </script>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/919363922322" class="whatsapp">💬</a>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h2>TechnoCovai</h2>
+                <p>Trusted Technology Partner delivering innovative IT solutions, web development, and software
+                    services
+                    to
+                    businesses worldwide.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Desktop Apps</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                    <li><a href="#">IT Consulting</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+
+                <!-- Clickable Address -->
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&query=No+10,+Raja+Annamalai+Street,+Saibaba+Colony,+Coimbatore-641011,+Tamil+Nadu,+India"
+                        target="_blank">
+                        No 10, Raja Annamalai Street, Saibaba Colony, Coimbatore-641011, Tamil Nadu, India
+                    </a>
+                </p>
+
+                <!-- Clickable Phone -->
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919363922322">+91 9363922322</a>
+                </p>
+
+                <!-- Clickable Email -->
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@technocovai.com">support@technocovai.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Technocovai. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const revealTargets = document.querySelectorAll("section, .card, .service-card, .stat-box, .footer-section, .hero-content, .career-card");
+            revealTargets.forEach(el => el.classList.add("reveal-up"));
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+                revealTargets.forEach(el => observer.observe(el));
+            } else {
+                revealTargets.forEach(el => el.classList.add("visible"));
+            }
+        });
+    </script>
+</body>
+
+</html>

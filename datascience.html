@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechnoCovai | Data Science Internship</title>
+    <link rel="icon" href="img/logo_title.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+
+        /* Navbar 1 */
+        .navbar-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            background: white;
+            color: rgb(94, 15, 241);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-1 .logo img {
+            height: 70px;
+        }
+
+        .navbar-1 .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+
+
+        }
+
+        .navbar-1 .menu li {
+            position: relative;
+        }
+
+        .navbar-1 .menu li a {
+            text-decoration: none;
+            color: #002f6c;
+            font-weight: 500;
+            padding: 8px 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .navbar-1 .menu li a:hover {
+            background-color: #ff00d9;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .navbar-1 .menu li .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: rgba(52, 9, 194, 0.9);
+            border-radius: 6px;
+            list-style: none;
+            padding: 8px 0;
+            min-width: 180px;
+
+            z-index: 9999;
+        }
+
+        .navbar-1 .menu li:hover .dropdown {
+            display: block;
+        }
+
+        .navbar-1 .menu li .dropdown li a {
+            display: block;
+            padding: 8px 15px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .navbar-1 .menu li .dropdown li a:hover {
+            background: #ff00d9;
+            color: white;
+        }
+
+        .navbar-1 .nav-log-btn p {
+            background: #0d0db6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .navbar-1 .nav-log-btn p:hover {
+            transform: scale(1.1);
+            background-color: #cb14af;
+        }
+
+        .navbar-1.shrink {
+            padding: 6px 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .navbar-1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-1 .menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-1 .menu li .dropdown {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(135deg, #002f6c, #5e0ff1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 60px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #002f6c;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* CARD */
+        .card {
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* BUTTON */
+        .apply-btn {
+            background: #b60ac2;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+
+        .apply-btn:hover {
+            background: #ef2fef;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+
+        /*footer*/
+        .footer {
+            background: #002f6c;
+            color: #ffffff;
+            padding: 60px 20px 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1 1 220px;
+            margin: 20px;
+        }
+
+        .footer-section h2,
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section li,
+        .footer-section a {
+            color: #ffffffcc;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li:hover a {
+            color: #ff00d9;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a {
+            display: inline-block;
+            margin-right: 10px;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a:hover {
+            color: #ff00d9;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0 0;
+            border-top: 1px solid #ffffff33;
+            font-size: 14px;
+            color: #ffffffcc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin: 20px 0;
+            }
+        }
+
+        .footer-section.contact a {
+            color: #ffffffcc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section.contact a:hover {
+            color: #ff00d9;
+            /* Accent color on hover */
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="css/professional-shared.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar-1 navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="img/final_logo.png" alt="Technocovai Logo">
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="menu navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">
+                            <i class="fa-solid fa-box"></i> Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html#services">
+                            <i class="fa-solid fa-gears"></i> Services
+                        </a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="./intership.html" data-bs-toggle="dropdown">
+
+                            <i class="fa-solid fa-graduation-cap"></i> Internships
+                        </a>
+
+                        <ul class="dropdown-menu dropdown">
+
+                            <li><a class="dropdown-item" href="fullstack.html">
+                                    <i class="fa-solid fa-code"></i> Full Stack
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="datascience.html">
+                                    <i class="fa-solid fa-database"></i> Data Science
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="powerbi.html">
+                                    <i class="fa-solid fa-chart-column"></i> Power BI
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="cybersecurity.html">
+                                    <i class="fa-solid fa-shield-halved"></i> Cyber Security
+                                </a></li>
+                            <li><a class="dropdown-item" href="iot.html">
+                                    <i class="fa-solid fa-signal"></i> Embedded & IoT
+                                </a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fa-solid fa-blog"></i> Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./career.html">
+                            <i class="fa-solid fa-briefcase"></i> Career
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">
+                            <i class="fa-solid fa-envelope"></i> Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-log-btn nav-link" href="./loginpage.html">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <h1>Data Science Internship</h1>
+            <p>Learn Data Analysis, Machine Learning & Real-Time Projects</p>
+            <button class="apply-btn btn btn-primary"
+                onclick="window.location.href='internship.html?course=Data%20Science'">
+                Apply Now
+            </button>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section">
+        <h2>About Internship</h2>
+        <p>
+            The <strong>Data Science Internship at Technocovai</strong> is designed to provide
+            hands-on, industry-oriented training for students and aspiring professionals.
+            This program focuses on building strong practical skills through real-time projects
+            and live datasets.
+
+            During the internship, you will learn how to analyze and interpret data,
+            build machine learning models, and extract meaningful insights to support
+            business decisions. You will also gain experience working with modern tools
+            and technologies used in the data science industry.
+
+            By the end of the program, you will be capable of handling real-world data
+            challenges and will be well-prepared for careers in Data Science, Data Analytics,
+            and Machine Learning.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section bg-light">
+        <h2>Skills You Will Learn</h2>
+        <div class="grid">
+
+            <div class="card">Python Programming</div>
+            <div class="card">Data Analysis</div>
+            <div class="card">Machine Learning</div>
+            <div class="card">Data Visualization</div>
+            <div class="card">Statistics</div>
+            <div class="card">SQL</div>
+
+        </div>
+    </section>
+    <div class="container my-5">
+        <div class="row g-4">
+
+            <!-- TOOLS -->
+            <div class="col-md-6">
+                <div class="card p-4 h-100">
+                    <h2>Tools & Technologies</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>Pandas & NumPy</li>
+                        <li>Matplotlib & Seaborn</li>
+                        <li>Scikit-Learn</li>
+                        <li>Power BI</li>
+                        <li>Jupyter Notebook</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CURRICULUM -->
+            <div class="col-md-6">
+                <div class="card p-4 h-100 bg-light">
+                    <h2>Internship Curriculum</h2>
+                    <ul>
+                        <li>Introduction to Data Science</li>
+                        <li>Python Basics & Advanced</li>
+                        <li>Data Cleaning & Preprocessing</li>
+                        <li>Exploratory Data Analysis</li>
+                        <li>Machine Learning Algorithms</li>
+                        <li>Model Evaluation</li>
+                        <li>Real-Time Projects</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row g-4">
+
+            <!-- PROJECTS -->
+            <div class="col-md-6">
+                <div class="card p-4 h-100">
+                    <h2 class="mb-3">Real-Time Projects @ Technocovai</h2>
+                    <p>
+                        At <strong>Technocovai</strong>, interns work on industry-level projects designed to
+                        build practical skills and real-world experience in Data Science.
+                    </p>
+
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="fa fa-check-circle text-primary me-2"></i>
+                            <strong>Sales Prediction System</strong> – Build ML models to forecast future sales using
+                            historical data.
+                        </li>
+
+                        <li><i class="fa fa-check-circle text-primary me-2"></i>
+                            <strong>Customer Segmentation</strong> – Analyze customer behavior and group users using
+                            clustering techniques.
+                        </li>
+
+                        <li><i class="fa fa-check-circle text-primary me-2"></i>
+                            <strong>Spam Detection Model</strong> – Develop classification models for email/text
+                            filtering.
+                        </li>
+
+                        <li><i class="fa fa-check-circle text-primary me-2"></i>
+                            <strong>Movie Recommendation System</strong> – Create intelligent recommendation engines
+                            using
+                            ML algorithms.
+                        </li>
+
+                        <li><i class="fa fa-check-circle text-primary me-2"></i>
+                            <strong>Data Visualization Dashboard</strong> – Design dashboards using Power BI & Python
+                            visualization tools.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BENEFITS -->
+            <div class="col-md-6">
+                <div class="card p-4 h-100 bg-light">
+                    <h2 class="mb-3">Internship Benefits @ Technocovai</h2>
+
+                    <p>
+                        Our internship program is designed to provide complete industry exposure,
+                        helping students transform into job-ready professionals.
+                    </p>
+
+                    <ul class="list-unstyled mt-3">
+                        <li><i class="fa fa-star text-warning me-2"></i>
+                            <strong>Real-Time Project Experience</strong> – Work on live datasets and real business
+                            problems.
+                        </li>
+
+                        <li><i class="fa fa-star text-warning me-2"></i>
+                            <strong>Industry Mentorship</strong> – Guidance from experienced developers and data
+                            scientists.
+                        </li>
+
+                        <li><i class="fa fa-star text-warning me-2"></i>
+                            <strong>Internship Certificate</strong> – Recognized certification from Technocovai.
+                        </li>
+
+                        <li><i class="fa fa-star text-warning me-2"></i>
+                            <strong>Placement Assistance</strong> – Resume building, interview preparation & job
+                            support.
+                        </li>
+
+                        <li><i class="fa fa-star text-warning me-2"></i>
+                            <strong>Hands-on Training</strong> – Practical learning with tools like Python, Power BI &
+                            ML.
+                        </li>
+
+                        <li><i class="fa fa-star text-warning me-2"></i>
+                            <strong>Flexible Learning</strong> – Online & offline training options available.
+                        </li>
+                    </ul>
+
+                    <!-- CTA BUTTON -->
+                    <button class="apply-btn btn btn-primary"
+                        onclick="window.location.href='internship.html?course=Data%20Science'">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h2>TechnoCovai</h2>
+                <p>Trusted Technology Partner delivering innovative IT solutions, web development, and software
+                    services
+                    to
+                    businesses worldwide.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Desktop Apps</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                    <li><a href="#">IT Consulting</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+
+                <!-- Clickable Address -->
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&query=No+10,+Raja+Annamalai+Street,+Saibaba+Colony,+Coimbatore-641011,+Tamil+Nadu,+India"
+                        target="_blank">
+                        No 10, Raja Annamalai Street, Saibaba Colony, Coimbatore-641011, Tamil Nadu, India
+                    </a>
+                </p>
+
+                <!-- Clickable Phone -->
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919363922322">+91 9363922322</a>
+                </p>
+
+                <!-- Clickable Email -->
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@technocovai.com">support@technocovai.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Technocovai. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function openForm() {
+            new bootstrap.Modal(document.getElementById('applyModal')).show();
+        }
+
+        document.getElementById("applyForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Application Submitted Successfully!");
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const revealTargets = document.querySelectorAll("section, .card, .service-card, .stat-box, .footer-section, .hero-content, .internship-card");
+            revealTargets.forEach(el => el.classList.add("reveal-up"));
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+                revealTargets.forEach(el => observer.observe(el));
+            } else {
+                revealTargets.forEach(el => el.classList.add("visible"));
+            }
+        });
+    </script>
+</body>
+
+</html>

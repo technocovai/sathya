@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoCovai Products</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* PRODUCT SECTION */
+        #our-products {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #002f6c, #5e0ff1);
+        }
+
+        .products-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: #081766;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        /* FULL PAGE OVERLAY */
+        .product-full {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background: #f9faff;
+            z-index: 9999;
+            transition: 0.4s;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .product-full.active {
+            left: 0;
+        }
+
+        .product-full .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-full h1 {
+            color: #002aff;
+        }
+
+        .product-full h2 {
+            color: #ff00d9;
+            margin-top: 25px;
+        }
+
+        .product-full p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .product-full li {
+            margin-bottom: 10px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, #002aff, #ff00d9);
+            color: white;
+            border: none;
+            border-radius: 25px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/professional-shared.css">
+</head>
+
+<body>
+
+    <!-- PRODUCTS -->
+    <section id="our-products">
+        <div class="products-header">
+            <h2>Our Products</h2>
+            <p>Explore our software solutions</p>
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card" onclick="openProduct('chit')">
+                <div class="card-icon">💰</div>
+                <h3>Chit Fund System</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+            <div class="product-card" onclick="openProduct('college')">
+                <div class="card-icon">🏫</div>
+                <h3>College Platform</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+            <div class="product-card" onclick="openProduct('erp')">
+                <div class="card-icon">🏢</div>
+                <h3>ERP & CRM</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+            <div class="product-card" onclick="openProduct('school')">
+                <div class="card-icon">📚</div>
+                <h3>School System</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+            <div class="product-card" onclick="openProduct('supermarket')">
+                <div class="card-icon">🛒</div>
+                <h3>Supermarket</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+            <div class="product-card" onclick="openProduct('textile')">
+                <div class="card-icon">🧵</div>
+                <h3>Textile Billing</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+            <div class="product-card" onclick="openProduct('ecommerce')">
+                <div class="card-icon">🛍️</div>
+                <h3>E-commerce</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+            <div class="product-card" onclick="openProduct('apps')">
+                <div class="card-icon">💻</div>
+                <h3>App Development</h3>
+                <span class="btn-custom">Learn More</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FULL SCREEN PRODUCT DETAIL -->
+    <section id="product-full" class="product-full">
+        <div class="container">
+
+            <h1 id="full-title"></h1>
+            <p id="full-desc"></p>
+
+            <div id="full-features"></div>
+            <div id="full-benefits"></div>
+
+            <button onclick="closeProduct()" class="btn-back">← Back to Products</button>
+
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+        const products = {
+            chit: {
+                title: "Chit Fund Management System",
+                desc: "Handles all chit operations efficiently and accurately.",
+                features: [
+                    "Customer Management",
+                    "Auction Management",
+                    "Installment Tracking",
+                    "Reports & Analytics",
+                    "Secure Data"
+                ],
+                benefits: [
+                    "Streamlined operations",
+                    "Reduced errors",
+                    "Real-time tracking"
+                ]
+            },
+            college: {
+                title: "College Project Platform",
+                desc: "Manage student projects and assignments.",
+                features: ["Project Tracking", "Submission", "Collaboration"],
+                benefits: ["Better productivity", "Centralized system"]
+            },
+            erp: {
+                title: "ERP & CRM Solutions",
+                desc: "Business management system.",
+                features: ["Finance", "Inventory", "CRM", "HR"],
+                benefits: ["Centralized control", "Improved efficiency"]
+            },
+            school: {
+                title: "School Management System",
+                desc: "Manage school activities.",
+                features: ["Attendance", "Marks", "Records"],
+                benefits: ["Easy management"]
+            },
+            supermarket: {
+                title: "Supermarket Billing",
+                desc: "Billing & inventory system.",
+                features: ["POS", "Stock"],
+                benefits: ["Fast billing"]
+            },
+            textile: {
+                title: "Textile Billing",
+                desc: "Billing for textile shops.",
+                features: ["Stock", "Invoices"],
+                benefits: ["Better tracking"]
+            },
+            ecommerce: {
+                title: "E-commerce Platform",
+                desc: "Online shopping system.",
+                features: ["Cart", "Payment"],
+                benefits: ["Online sales"]
+            },
+            apps: {
+                title: "App Development",
+                desc: "Web & mobile apps.",
+                features: ["Android", "Web"],
+                benefits: ["Custom solutions"]
+            }
+        };
+
+        function openProduct(key) {
+            let p = products[key];
+
+            document.getElementById("full-title").innerText = p.title;
+            document.getElementById("full-desc").innerText = p.desc;
+
+            let f = "<h2>Features:</h2><ul>";
+            p.features.forEach(x => f += `<li>${x}</li>`);
+            f += "</ul>";
+
+            let b = "<h2>Benefits:</h2><ul>";
+            p.benefits.forEach(x => b += `<li>${x}</li>`);
+            b += "</ul>";
+
+            document.getElementById("full-features").innerHTML = f;
+            document.getElementById("full-benefits").innerHTML = b;
+
+            document.getElementById("product-full").classList.add("active");
+        }
+
+        function closeProduct() {
+            document.getElementById("product-full").classList.remove("active");
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const revealTargets = document.querySelectorAll("section, .card, .service-card, .stat-box, .footer-section, .hero-content, .internship-card");
+            revealTargets.forEach(el => el.classList.add("reveal-up"));
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+                revealTargets.forEach(el => observer.observe(el));
+            } else {
+                revealTargets.forEach(el => el.classList.add("visible"));
+            }
+        });
+    </script>
+</body>
+
+</html>

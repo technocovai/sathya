@@ -1,0 +1,241 @@
+/* Navbar 1 */
+.navbar-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background: white;
+    color: rgb(94, 15, 241);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+body {
+    user-select: none;
+    /* Standard */
+    -webkit-user-select: none;
+    /* Chrome, Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+}
+
+.navbar-1 .logo img {
+    height: 70px;
+}
+
+.navbar-1 .menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+
+}
+
+.navbar-1 .menu li {
+    position: relative;
+}
+
+.navbar-1 .menu li a {
+    text-decoration: none;
+    color: #002f6c;
+    font-weight: 500;
+    padding: 8px 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.navbar-1 .menu li a:hover {
+    background-color: #ff00d9;
+    color: white;
+    border-radius: 5px;
+}
+
+.navbar-1 .menu li .dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: rgba(52, 9, 194, 0.9);
+    border-radius: 6px;
+    list-style: none;
+    padding: 8px 0;
+    min-width: 180px;
+
+    z-index: 9999;
+}
+
+.navbar-1 .menu li:hover .dropdown {
+    display: block;
+}
+
+.navbar-1 .menu li .dropdown li a {
+    display: block;
+    padding: 8px 15px;
+    color: white;
+    font-weight: 400;
+}
+
+.navbar-1 .menu li .dropdown li a:hover {
+    background: #ff00d9;
+    color: white;
+}
+
+.navbar-1 .nav-log-btn p {
+    background: #0d0db6;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.navbar-1 .nav-log-btn p:hover {
+    transform: scale(1.1);
+    background-color: #cb14af;
+}
+
+.navbar-1.shrink {
+    padding: 6px 30px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .navbar-1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-1 .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-1 .menu li .dropdown {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #cd37c0;
+    background: rgba(0, 42, 255, 0.1);
+    padding: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+    width: 80px;
+    height: 80px;
+}
+
+
+
+
+
+
+
+/*footer*/
+.footer {
+    background: #002f6c;
+    color: #ffffff;
+    padding: 60px 20px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1 1 220px;
+    margin: 20px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+    color: #ffffffcc;
+    font-size: 14px;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li:hover a {
+    color: #ff00d9;
+    transition: 0.3s;
+}
+
+.footer-section .socials a {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.footer-section .socials a:hover {
+    color: #ff00d9;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0 0;
+    border-top: 1px solid #ffffff33;
+    font-size: 14px;
+    color: #ffffffcc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+    }
+}
+
+.footer-section.contact a {
+    color: #ffffffcc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section.contact a:hover {
+    color: #ff00d9;
+    /* Accent color on hover */
+    text-decoration: underline;
+}

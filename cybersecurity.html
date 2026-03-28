@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Master Ethical Hacking, Network Security, and Penetration Testing with TechnoCovai Software Pvt. Ltd. Join our integrated CEH + CST Cyber Security Training Program.">
+    <meta name="author" content="TechnoCovai Software Pvt. Ltd.">
+    <title>Cyber Security Training Program | TechnoCovai</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Swiper JS at bottom of body -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --cyber-dark: #0B0F19;
+            --cyber-card: #111827;
+            --cyber-primary: #00F0FF;
+            --cyber-secondary: #7000FF;
+            --cyber-text: #9CA3AF;
+        }
+
+        body {
+            background-color: var(--cyber-dark);
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cyber-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--cyber-primary);
+        }
+
+        /* Navbar 1 */
+        .navbar-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            background: white;
+            color: rgb(94, 15, 241);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-1 .logo img {
+            height: 70px;
+        }
+
+        .navbar-1 .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+
+
+        }
+
+        .navbar-1 .menu li {
+            position: relative;
+        }
+
+        .navbar-1 .menu li a {
+            text-decoration: none;
+            color: #002f6c;
+            font-weight: 500;
+            padding: 8px 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .navbar-1 .menu li a:hover {
+            background-color: #ff00d9;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .navbar-1 .menu li .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: rgba(52, 9, 194, 0.9);
+            border-radius: 6px;
+            list-style: none;
+            padding: 8px 0;
+            min-width: 180px;
+
+            z-index: 9999;
+        }
+
+        .navbar-1 .menu li:hover .dropdown {
+            display: block;
+        }
+
+        .navbar-1 .menu li .dropdown li a {
+            display: block;
+            padding: 8px 15px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .navbar-1 .menu li .dropdown li a:hover {
+            background: #ff00d9;
+            color: white;
+        }
+
+        .navbar-1 .nav-log-btn p {
+            background: #0d0db6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .navbar-1 .nav-log-btn p:hover {
+            transform: scale(1.1);
+            background-color: #cb14af;
+        }
+
+        .navbar-1.shrink {
+            padding: 6px 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .navbar-1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-1 .menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-1 .menu li .dropdown {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        /* Gradient & Glow Effects */
+        .gradient-text {
+            background: linear-gradient(90deg, #00F0FF 0%, #7000FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cyber-btn-primary {
+            background-color: var(--cyber-primary);
+            color: #000;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .cyber-btn-primary:hover {
+            background-color: #fff;
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .cyber-card {
+            background-color: var(--cyber-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cyber-card:hover {
+            border-color: var(--cyber-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.2);
+        }
+
+        .hero-glow {
+            position: absolute;
+            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.15;
+            border-radius: 50%;
+        }
+
+        /* Form Controls */
+        .form-control-cyber {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            color: white;
+            padding: 1rem;
+        }
+
+        .form-control-cyber:focus {
+            background-color: #1f2937;
+            border-color: var(--cyber-primary);
+            box-shadow: 0 0 0 0.25rem rgba(0, 240, 255, 0.25);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+
+        /*footer*/
+        .footer {
+            background: #002f6c;
+            color: #ffffff;
+            padding: 60px 20px 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1 1 220px;
+            margin: 20px;
+        }
+
+        .footer-section h2,
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section li,
+        .footer-section a {
+            color: #ffffffcc;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li:hover a {
+            color: #ff00d9;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a {
+            display: inline-block;
+            margin-right: 10px;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a:hover {
+            color: #ff00d9;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0 0;
+            border-top: 1px solid #ffffff33;
+            font-size: 14px;
+            color: #ffffffcc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin: 20px 0;
+            }
+        }
+
+        .footer-section.contact a {
+            color: #ffffffcc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section.contact a:hover {
+            color: #ff00d9;
+            /* Accent color on hover */
+            text-decoration: underline;
+        }
+
+        /* Styling the input text color */
+        .form-control-cyber {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            color: #ffffff;
+            /* This makes the text you type white */
+            padding: 1rem;
+        }
+
+        /* Specifically styling the placeholder color */
+        .form-control-cyber::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            /* White with 70% opacity */
+            opacity: 1;
+            /* Firefox fix */
+        }
+
+        .form-control-cyber:focus {
+            background-color: #1f2937;
+            border-color: var(--cyber-primary);
+            color: #ffffff;
+            box-shadow: 0 0 0 0.25rem rgba(0, 240, 255, 0.25);
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav">
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar-1 navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="img/final_logo.png" alt="Technocovai Logo">
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="menu navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">
+                            <i class="fa-solid fa-box"></i> Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html#services">
+                            <i class="fa-solid fa-gears"></i> Services
+                        </a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="./intership.html" data-bs-toggle="dropdown">
+
+                            <i class="fa-solid fa-graduation-cap"></i> Internships
+                        </a>
+
+                        <ul class="dropdown-menu dropdown">
+
+                            <li><a class="dropdown-item" href="fullstack.html">
+                                    <i class="fa-solid fa-code"></i> Full Stack
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="datascience.html">
+                                    <i class="fa-solid fa-database"></i> Data Science
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="powerbi.html">
+                                    <i class="fa-solid fa-chart-column"></i> Power BI
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="cybersecurity.html">
+                                    <i class="fa-solid fa-shield-halved"></i> Cyber Security
+                                </a></li>
+                            <li><a class="dropdown-item" href="iot.html">
+                                    <i class="fa-solid fa-signal"></i> Embedded & IoT
+                                </a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fa-solid fa-blog"></i> Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./career.html">
+                            <i class="fa-solid fa-briefcase"></i> Career
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">
+                            <i class="fa-solid fa-envelope"></i> Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-log-btn nav-link" href="./loginpage.html">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <header class="position-relative pt-5">
+        <div class="hero-glow bg-info top-0 start-0" style="width: 400px; height: 400px;"></div>
+        <div class="hero-glow bg-primary bottom-0 end-0" style="width: 400px; height: 400px;"></div>
+
+        <div class="container text-center pt-5 mt-5">
+            <div
+                class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-dark border border-secondary mb-4">
+                <i data-lucide="lock" class="text-info" style="width: 16px;"></i>
+                <span class="font-mono text-info small fw-bold">CEH + CST INTEGRATED PROGRAM</span>
+            </div>
+            <h1 class="display-2 fw-extrabold mb-4">
+                Master the Art of <br>
+                <span class="gradient-text">Cyber Defense</span>
+            </h1>
+            <p class="lead mx-auto mb-5 text-secondary" style="max-width: 750px;">
+                Equip yourself with practical skills in Ethical Hacking, Network Security, and Penetration Testing.
+                Prepare for real-world security challenges with industry experts.
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="#modules" class="btn cyber-btn-primary btn-lg px-5 py-3">Explore Syllabus</a>
+                <a href="#features" class="btn btn-outline-secondary btn-lg px-5 py-3 text-white">View Features</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="bg-dark bg-opacity-25 border-top border-bottom border-secondary border-opacity-25">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Why Choose This Program?</h2>
+                <div class="mx-auto mt-2"
+                    style="width: 60px; height: 4px; background: var(--cyber-primary); border-radius: 2px;"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="p-4 cyber-card h-100 border-opacity-10">
+                        <div class="mb-3 p-3 bg-dark rounded-circle d-inline-block">
+                            <i data-lucide="briefcase" class="text-info"></i>
+                        </div>
+                        <h6 class="fw-bold small">Industry Curriculum</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="p-4 cyber-card h-100 border-opacity-10">
+                        <div class="mb-3 p-3 bg-dark rounded-circle d-inline-block">
+                            <i data-lucide="activity" class="text-info"></i>
+                        </div>
+                        <h6 class="fw-bold small">Real-Time Practice</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="p-4 cyber-card h-100 border-opacity-10">
+                        <div class="mb-3 p-3 bg-dark rounded-circle d-inline-block">
+                            <i data-lucide="terminal" class="text-info"></i>
+                        </div>
+                        <h6 class="fw-bold small">Hands-on Labs</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="p-4 cyber-card h-100 border-opacity-10">
+                        <div class="mb-3 p-3 bg-dark rounded-circle d-inline-block">
+                            <i data-lucide="award" class="text-info"></i>
+                        </div>
+                        <h6 class="fw-bold small">Cert Prep</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="p-4 cyber-card h-100 border-opacity-10">
+                        <div class="mb-3 p-3 bg-dark rounded-circle d-inline-block">
+                            <i data-lucide="rocket" class="text-info"></i>
+                        </div>
+                        <h6 class="fw-bold small">Job Assistance</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modules">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Comprehensive <span class="text-info">Curriculum</span></h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">20 in-depth modules taking you from
+                    networking fundamentals to advanced cloud security and penetration testing.</p>
+            </div>
+            <div class="row g-4" id="syllabus-container">
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" class="bg-dark bg-opacity-25 border-top border-secondary border-opacity-25">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-5 d-flex align-items-center gap-3">
+                        <i data-lucide="users" class="text-info"></i> Who Can Join?
+                    </h2>
+                    <div class="d-grid gap-3">
+                        <div class="p-4 cyber-card d-flex align-items-center gap-4">
+                            <i data-lucide="graduation-cap" class="text-secondary"></i>
+                            <span class="fw-semibold h5 mb-0">Students (IT / Non-IT)</span>
+                        </div>
+                        <div class="p-4 cyber-card d-flex align-items-center gap-4">
+                            <i data-lucide="laptop" class="text-secondary"></i>
+                            <span class="fw-semibold h5 mb-0">Working IT Professionals</span>
+                        </div>
+                        <div class="p-4 cyber-card d-flex align-items-center gap-4">
+                            <i data-lucide="flame" class="text-secondary"></i>
+                            <span class="fw-semibold h5 mb-0">Hacking Enthusiasts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-5 d-flex align-items-center gap-3">
+                        <i data-lucide="trending-up" class="text-info"></i> Career Opportunities
+                    </h2>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-4 cyber-card h-100">
+                                <h5 class="fw-bold text-white">Ethical Hacker</h5>
+                                <p class="small text-secondary mb-0">Identify vulnerabilities before they are exploited.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 cyber-card h-100">
+                                <h5 class="fw-bold text-white">Security Analyst</h5>
+                                <p class="small text-secondary mb-0">Monitor and mitigate network breaches.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="p-4 cyber-card">
+                                <h5 class="fw-bold text-white">Vulnerability Consultant</h5>
+                                <p class="small text-secondary mb-0">Advise major organizations on security best
+                                    practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="enroll" class="position-relative">
+        <div class="container">
+            <div class="mx-auto p-5 text-center cyber-card"
+                style="max-width: 900px; background: rgba(17, 24, 39, 0.8);">
+
+                <h2 class="display-6 fw-bold mb-4">Ready to Secure the Future?</h2>
+
+                <p class="lead text-secondary mb-5">
+                    Join TechnoCovai's elite training program and fast-track your career in cybersecurity.
+                </p>
+
+                <!-- APPLY BUTTON -->
+                <a href="internship.html?course=Cyber%20Security" class="btn cyber-btn-primary px-5 py-3 fw-bold">
+                    Apply Now
+                </a>
+
+                <p class="text-secondary small mt-4">
+                    Or call us directly at
+                    <a href="tel:+919363922322" class="text-info text-decoration-none fw-bold">
+                        +91 93639 22322
+                    </a>
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h2>TechnoCovai</h2>
+                <p>Trusted Technology Partner delivering innovative IT solutions, web development, and software
+                    services
+                    to
+                    businesses worldwide.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Desktop Apps</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                    <li><a href="#">IT Consulting</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+
+                <!-- Clickable Address -->
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&query=No+10,+Raja+Annamalai+Street,+Saibaba+Colony,+Coimbatore-641011,+Tamil+Nadu,+India"
+                        target="_blank">
+                        No 10, Raja Annamalai Street, Saibaba Colony, Coimbatore-641011, Tamil Nadu, India
+                    </a>
+                </p>
+
+                <!-- Clickable Phone -->
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919363922322">+91 9363922322</a>
+                </p>
+
+                <!-- Clickable Email -->
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@technocovai.com">support@technocovai.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Technocovai. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        const modules = [
+            { id: 1, title: "Fundamentals of Networking", topics: ["Intro to Computer Networks", "OSI & TCP/IP Models", "Network Layers"] },
+            { id: 2, title: "Cyber Security Basics", topics: ["Ethical Hacking Concepts", "Hacking Lifecycle", "Security Overview"] },
+            { id: 3, title: "Secure Protocols", topics: ["TCP, UDP, HTTP Concepts", "VPN & OpenVPN", "IP Addressing"] },
+            { id: 4, title: "Linux for Hackers", topics: ["Linux Commands", "Terminal Operations", "File Systems"] },
+            { id: 5, title: "Footprinting & Recon", topics: ["OSINT Techniques", "Information Gathering", "Social Engineering"] },
+            { id: 6, title: "Scanning & Enumeration", topics: ["Network Scanning", "Enumeration Types", "Live System Detection"] },
+            { id: 7, title: "VAPT", topics: ["Assessment Classification", "Manual vs Auto Testing", "Reporting"] },
+            { id: 8, title: "System Hacking", topics: ["Password Cracking", "Privilege Escalation", "Covering Tracks"] },
+            { id: 9, title: "Mobile Security", topics: ["Mobile Vulnerabilities", "Android/iOS Attacks", "Security Tools"] },
+            { id: 10, title: "Malware Analysis", topics: ["Trojan/Viruses", "APT Concepts", "Detection Methods"] },
+            { id: 11, title: "Sniffing Attacks", topics: ["Packet Sniffing", "ARP Poisoning", "MAC Flooding"] },
+            { id: 12, title: "Wireless Security", topics: ["Wireless Concepts", "Encryption Cracking", "WPA/WPA2 Security"] },
+            { id: 13, title: "DoS/DDoS Attacks", topics: ["Botnets", "Attack Vectors", "Prevention Strategies"] },
+            { id: 14, title: "Session Hijacking", topics: ["Hijacking Techniques", "Risk Mitigation", "HTTPS/SSL"] },
+            { id: 15, title: "Web Server Security", topics: ["Server Hardening", "Patch Management", "IIS/Apache Security"] },
+            { id: 16, title: "Web App Security", topics: ["OWASP Top 10", "SQL Injection", "XSS Attacks"] },
+            { id: 17, title: "Cryptography", topics: ["Encryption Types", "PKI Infrastructure", "Digital Signatures"] },
+            { id: 18, title: "IDS & Firewalls", topics: ["Firewall Evasion", "Honeypot Concepts", "Intrusion Detection"] },
+            { id: 19, title: "IoT Security", topics: ["IoT Vulnerabilities", "Hacking Techniques", "Device Hardening"] },
+            { id: 20, title: "Cloud Security", topics: ["Cloud Pentesting", "Azure/AWS Security", "SaaS/PaaS Risks"] }
+        ];
+
+        const container = document.getElementById('syllabus-container');
+
+        modules.forEach(mod => {
+            const col = document.createElement('div');
+            col.className = 'col-12 col-md-6 col-lg-4';
+
+            const topicsHtml = mod.topics.map(topic =>
+                `<li class="d-flex align-items-start gap-2 mb-2 small text-secondary">
+                    <i data-lucide="chevron-right" class="text-info mt-1" style="width:14px; height:14px;"></i>
+                    <span>${topic}</span>
+                </li>`
+            ).join('');
+
+            col.innerHTML = `
+                <div class="p-4 cyber-card h-100 d-flex flex-column">
+                    <div class="font-mono text-info small mb-2 fw-bold">MODULE ${String(mod.id).padStart(2, '0')}</div>
+                    <h5 class="fw-bold text-white mb-3">${mod.title}</h5>
+                    <ul class="list-unstyled mb-0">
+                        ${topicsHtml}
+                    </ul>
+                </div>
+            `;
+            container.appendChild(col);
+        });
+
+        // Re-init icons for dynamic content
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

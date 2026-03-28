@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechnoCovai | Product</title>
+    <link rel="icon" href="img/logo_title.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Swiper JS at bottom of body -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/product.css">
+    <style>
+        /* Soft Background Shapes */
+        .bg-shape {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(13, 110, 253, 0.15), transparent);
+            filter: blur(80px);
+        }
+
+        .shape1 {
+            top: 10%;
+            left: 5%;
+        }
+
+        .shape2 {
+            bottom: 10%;
+            right: 5%;
+        }
+
+        /* Premium Card */
+        .premium-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Button */
+        .premium-btn {
+            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            border: none;
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .premium-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+        }
+
+        /* Animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar-1 navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="img/final_logo.png" alt="Technocovai Logo">
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="menu navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">
+                            <i class="fa-solid fa-box"></i> Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html#services">
+                            <i class="fa-solid fa-gears"></i> Services
+                        </a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="./intership.html" data-bs-toggle="dropdown">
+
+                            <i class="fa-solid fa-graduation-cap"></i> Internships
+                        </a>
+
+                        <ul class="dropdown-menu dropdown">
+
+                            <li><a class="dropdown-item" href="fullstack.html">
+                                    <i class="fa-solid fa-code"></i> Full Stack
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="datascience.html">
+                                    <i class="fa-solid fa-database"></i> Data Science
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="powerbi.html">
+                                    <i class="fa-solid fa-chart-column"></i> Power BI
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="cybersecurity.html">
+                                    <i class="fa-solid fa-shield-halved"></i> Cyber Security
+                                </a></li>
+                            <li><a class="dropdown-item" href="iot.html">
+                                    <i class="fa-solid fa-signal"></i> Embedded & IoT
+                                </a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fa-solid fa-blog"></i> Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./career.html">
+                            <i class="fa-solid fa-briefcase"></i> Career
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">
+                            <i class="fa-solid fa-envelope"></i> Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-log-btn nav-link" href="./loginpage.html">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <!-- Our Products Section -->
+    <section id="our-products">
+        <!-- Heading & Description -->
+        <div class="products-header">
+            <h2>Our Products</h2>
+            <p>
+                At <span class="name1">Technocovai</span> <span class="name2">Softwares</span>, we deliver innovative
+                digital solutions and industry-ready software products. Explore projects designed to empower
+                organizations
+                and enhance efficiency.
+            </p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <div class="product-card" onclick="showProduct('chit')">
+                <div class="card-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <h3>Chit Fund Management System</h3>
+                <p>Complete software for chit fund operations, auctions, and customer management.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+
+            <div class="product-card" onclick="showProduct('college')">
+                <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                <h3>College Management System</h3>
+                <p>Academic portals with assignment tracking, collaboration tools, and project submission systems.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+
+            <div class="product-card" onclick="showProduct('erp')">
+                <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>Enterprise ERP & CRM Solutions</h3>
+                <p>Integrated software for managing business operations, inventory, and customer relationships.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+
+            <div class="product-card" onclick="showProduct('school')">
+                <div class="card-icon"><i class="fa-solid fa-school"></i></div>
+                <h3>School Management System</h3>
+                <p>Manage attendance, grading, student records, and online learning efficiently.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+
+            <div class="product-card" onclick="showProduct('supermarket')">
+                <div class="card-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                <h3>Supermarket Billing & Inventory</h3>
+                <p>Desktop software for billing, inventory management, and sales reporting.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+
+            <div class="product-card" onclick="showProduct('textile')">
+                <div class="card-icon"><i class="fa-solid fa-shirt"></i></div>
+                <h3>Textile Shop Billing Application</h3>
+                <p>Tailored billing and inventory management software for textile businesses.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+
+            <div class="product-card" onclick="showProduct('ecommerce')">
+                <div class="card-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                <h3>E-commerce Web & Mobile Platform</h3>
+                <p>Full-featured online shopping platform with catalog, cart, and payment integration.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+
+            <div class="product-card" onclick="showProduct('apps')">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Web, Mobile & Desktop App Development</h3>
+                <p>Custom apps for Web, Android, iOS, and Windows to enhance productivity.</p>
+                <a href="#product-detail" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Detail Section -->
+    <section id="product-detail" class="product-detail">
+        <h3>Select a product to view details</h3>
+        <p>Click "Learn More" to view product description and features here.</p>
+    </section>
+
+
+    <section id="app-enquiry" class="py-5 bg-white position-relative overflow-hidden">
+
+        <!-- Soft Background Shapes -->
+        <div class="bg-shape shape1"></div>
+        <div class="bg-shape shape2"></div>
+
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- LEFT CONTENT -->
+                <div class="col-lg-7 fade-up">
+                    <h2 class="fw-bold display-5 mb-3 text-dark">
+                        Build Your Next Application With Experts
+                    </h2>
+
+                    <p class="text-muted mb-4">
+                        Transform your ideas into powerful digital solutions. We create scalable,
+                        secure, and high-performance applications for your business growth.
+                    </p>
+
+                    <div class="row text-dark">
+                        <div class="col-md-6 mb-3">✔ Custom Web Development</div>
+                        <div class="col-md-6 mb-3">✔ Mobile App Solutions</div>
+                        <div class="col-md-6 mb-3">✔ E-commerce Platforms</div>
+                        <div class="col-md-6 mb-3">✔ UI/UX Design</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT CARD -->
+                <div class="col-lg-5 fade-up delay-1">
+                    <div class="premium-card text-center p-5">
+
+                        <h4 class="fw-bold mb-3">Start Your Project Today</h4>
+
+                        <p class="text-muted mb-4">
+                            Get free consultation from our experts.
+                        </p>
+
+                        <a href="contact.html" class="btn premium-btn w-100 py-3 mb-3">
+                            Enquire Now
+                        </a>
+
+                        <p class="small text-muted">
+                            📞 <a href="tel:+919363922322" class="text-primary fw-bold text-decoration-none">
+                                +91 93639 22322
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        const elements = document.querySelectorAll(".fade-up");
+
+        window.addEventListener("scroll", () => {
+            elements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) { el.classList.add("show"); }
+            });
+        }); </script>
+
+    <script>
+        const products = {
+            chit: { title: "Chit Fund Management System", description: "Handles chit fund operations including auctions, customer tracking, installments, and reporting.", features: ["Customer Management", "Auction Management", "Installment Tracking", "Reports & Analytics", "Secure Data Storage"] },
+            college: { title: "College Management System", description: "Manage student projects, assignments, team collaboration, and online submissions.", features: ["Project Tracking", "Assignment Management", "Collaboration Tools", "Submission Portal", "Reports & Feedback"] },
+            erp: { title: "Enterprise ERP & CRM Solutions", description: "Comprehensive ERP & CRM software for business operations, finance, inventory, HR, and customer relations.", features: ["Finance & Accounting", "Inventory Management", "Customer Relationship Management", "HR & Payroll", "Analytics & Reporting"] },
+            school: { title: "School Management System", description: "Manage attendance, grading, records, and online learning efficiently.", features: ["Attendance Tracking", "Grade Management", "Student Records", "Online Learning", "Reports & Notifications"] },
+            supermarket: { title: "Supermarket Billing & Inventory", description: "Desktop software for billing, inventory, and sales reporting.", features: ["Billing & POS", "Inventory Tracking", "Sales Reports", "Customer Management", "Discount Management"] },
+            textile: { title: "Textile Shop Billing Application", description: "Tailored billing software for textile shops including stock tracking and sales reports.", features: ["Product Stock Tracking", "Billing & Invoice", "Customer Management", "Sales Reports", "Alerts & Notifications"] },
+            ecommerce: { title: "E-commerce Web & Mobile Platform", description: "Full-featured online shopping platform with product catalog, cart system, and payment integration.", features: ["Product Catalog", "Shopping Cart", "Payment Integration", "Order Tracking", "User Management"] },
+            apps: { title: "Web,Mobile & Desktop App Development", description: "Custom applications for web, Android, iOS, and Windows to boost productivity.", features: ["Web Applications", "Android & iOS Apps", "Windows Desktop Apps", "Billing & Inventory Integration", "Push Notifications", "Cross-Platform Solutions"] }
+        };
+
+        function showProduct(key) {
+            const detail = document.getElementById('product-detail');
+            const product = products[key];
+            let html = `<h3>${product.title}</h3>`;
+            html += `<p>${product.description}</p>`;
+            html += "<ul>";
+            product.features.forEach(f => html += `<li>${f}</li>`);
+            html += "</ul>";
+            detail.innerHTML = html;
+            detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+
+    <style>
+        /* Section */
+        #our-products {
+            padding: 60px 15px;
+            background: linear-gradient(135deg, #002f6c, #5e0ff1);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .products-header h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: white;
+            position: relative;
+        }
+
+        .products-header h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: white;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .products-header p {
+            font-size: 1.1rem;
+            color: white;
+            max-width: 900px;
+            margin: 10px auto 0;
+        }
+
+        .name1,
+        .name2 {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card - glass effect */
+        .product-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.4s;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            color: #061872;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .product-card p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            color: #fff;
+            background: #081766;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background-color: #ff00d4;
+        }
+
+        /* Product Detail Section */
+        .product-detail {
+            scroll-margin-top: 100px;
+            padding: 50px 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .product-detail h3 {
+            color: #0b0675;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .product-detail p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .product-detail ul {
+            padding-left: 20px;
+        }
+
+        .product-detail li {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .products-header h2 {
+                font-size: 2rem;
+            }
+
+            .products-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h2>TechnoCovai</h2>
+                <p>Trusted Technology Partner delivering innovative IT solutions, web development, and software
+                    services
+                    to
+                    businesses worldwide.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Desktop Apps</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                    <li><a href="#">IT Consulting</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+
+                <!-- Clickable Address -->
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&query=No+10,+Raja+Annamalai+Street,+Saibaba+Colony,+Coimbatore-641011,+Tamil+Nadu,+India"
+                        target="_blank">
+                        No 10, Raja Annamalai Street, Saibaba Colony, Coimbatore-641011, Tamil Nadu, India
+                    </a>
+                </p>
+
+                <!-- Clickable Phone -->
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919363922322">+91 9363922322</a>
+                </p>
+
+                <!-- Clickable Email -->
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@technocovai.com">support@technocovai.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Technocovai. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

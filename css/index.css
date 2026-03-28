@@ -501,6 +501,29 @@
 
  }
 
+
+ @media (max-width: 480px) {
+
+     .hero {
+         height: 450px;
+     }
+
+     .hero-content h1 {
+         font-size: 24px;
+         word-wrap: break-word;
+     }
+
+     .hero-content p {
+         font-size: 13px;
+     }
+
+     .prev,
+     .next {
+         display: none;
+         /* hide arrows on very small screens */
+     }
+ }
+
  /* ================= WELCOME SECTION ================= */
  .welcome-section {
      padding: 100px 10%;

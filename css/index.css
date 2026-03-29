@@ -736,24 +736,14 @@
 
      .welcome-container {
          padding: 40px 5%;
-         flex-direction: column;
-         overflow: hidden;
-         /* FIX */
-     }
-
-     .welcome-text {
-         width: 100%;
      }
 
      .welcome-text h2 {
          font-size: 24px;
-         word-break: break-word;
-         /* prevent overflow */
      }
 
      .welcome-text p {
          font-size: 14px;
-
      }
 
      .welcome-btn {
@@ -761,28 +751,17 @@
          text-align: center;
      }
 
-     .welcome-image {
-         width: 100%;
-         text-align: center;
-     }
-
      .welcome-image img {
-         max-width: 100%;
-         height: auto;
+         max-width: 250px;
      }
 
      /* Stats: 1 per row */
      .stats-container {
          grid-template-columns: 1fr;
-         padding: 40px 5%;
      }
 
      .stat-box {
          padding: 20px;
-     }
-
-     * {
-         box-sizing: border-box;
      }
  }
 

@@ -763,6 +763,11 @@
      .stat-box {
          padding: 20px;
      }
+
+     .stat-box:hover {
+         transform: translateY(-5px);
+         transition: 0.3s;
+     }
  }
 
  /* Services */

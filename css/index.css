@@ -736,6 +736,17 @@
 
      .welcome-container {
          padding: 40px 5%;
+         display: flex;
+         flex-direction: column;
+         /* stack */
+         align-items: center;
+         /* horizontal center */
+         text-align: center;
+         /* text center */
+     }
+
+     .welcome-text {
+         width: 100%;
      }
 
      .welcome-text h2 {
@@ -751,17 +762,31 @@
          text-align: center;
      }
 
-     .welcome-image img {
-         max-width: 250px;
+     .welcome-image {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         /* center image */
      }
 
-     /* Stats: 1 per row */
+     .welcome-image img {
+         max-width: 250px;
+         width: 100%;
+     }
+
+     /* ================= STATS ================= */
+
      .stats-container {
          grid-template-columns: 1fr;
+         text-align: center;
      }
 
      .stat-box {
          padding: 20px;
+         margin: 0 auto;
+         /* center box */
+         width: 90%;
+         /* nice spacing */
      }
 
      .stat-box:hover {

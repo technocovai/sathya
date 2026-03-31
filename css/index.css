@@ -912,57 +912,6 @@
      }
  }
 
-
-
- /* ================= MOBILE (MAX 480px) ================= */
- @media (max-width: 480px) {
-
-     .services-header {
-         padding: 40px 15px;
-     }
-
-     .services-main-title {
-         font-size: 22px;
-         line-height: 1.3;
-     }
-
-     .services-main-desc {
-         font-size: 13px;
-         line-height: 1.5;
-         padding: 0 5px;
-     }
-
-     .service-carousel {
-         padding: 25px 8px;
-     }
-
-     .carousel-title {
-         font-size: 20px;
-         margin-bottom: 20px;
-     }
-
-     .service-card {
-         padding: 15px;
-         border-radius: 12px;
-         text-align: center;
-     }
-
-     .service-card i {
-         font-size: 22px;
-         margin-bottom: 10px;
-     }
-
-     .service-card h3 {
-         font-size: 15px;
-         margin-bottom: 8px;
-     }
-
-     .service-card p {
-         font-size: 12px;
-         line-height: 1.4;
-     }
- }
-
  /*footer*/
  .footer {
      background: #002f6c;

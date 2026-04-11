@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply Internship | TechnoCovai</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/final_icon48x48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/final_icon96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/final_icon192x192.png">
+    <link rel="apple-touch-icon" href="img/final_icon192x192.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #0B0F19;
+            color: #fff;
+        }
+
+
+
+        /* Navbar 1 */
+        .navbar-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            background: white;
+            color: rgb(94, 15, 241);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-1 .logo img {
+            height: 70px;
+        }
+
+        .navbar-1 .menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+
+
+        }
+
+        .navbar-1 .menu li {
+            position: relative;
+        }
+
+        .navbar-1 .menu li a {
+            text-decoration: none;
+            color: #002f6c;
+            font-weight: 500;
+            padding: 8px 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .navbar-1 .menu li a:hover {
+            background-color: #ff00d9;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .navbar-1 .menu li .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: rgba(52, 9, 194, 0.9);
+            border-radius: 6px;
+            list-style: none;
+            padding: 8px 0;
+            min-width: 180px;
+
+            z-index: 9999;
+        }
+
+        .navbar-1 .menu li:hover .dropdown {
+            display: block;
+        }
+
+        .navbar-1 .menu li .dropdown li a {
+            display: block;
+            padding: 8px 15px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .navbar-1 .menu li .dropdown li a:hover {
+            background: #ff00d9;
+            color: white;
+        }
+
+        .navbar-1 .nav-log-btn p {
+            background: #0d0db6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .navbar-1 .nav-log-btn p:hover {
+            transform: scale(1.1);
+            background-color: #cb14af;
+        }
+
+        .navbar-1.shrink {
+            padding: 6px 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .navbar-1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-1 .menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-1 .menu li .dropdown {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        /* Form */
+        .form-container {
+            background: #111827;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(61, 195, 218, 0.2);
+        }
+
+        input,
+        select,
+        textarea {
+            background: #1f2937 !important;
+            border: 1px solid #374151 !important;
+            color: white !important;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #0dc8e9 !important;
+            box-shadow: none !important;
+        }
+
+        .btn-primary {
+            background: #2ad4f2;
+            border: none;
+            color: rgb(253, 245, 245);
+            font-weight: bold;
+        }
+
+        /*footer*/
+        .footer {
+            background: #002f6c;
+            color: #ffffff;
+            padding: 60px 20px 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1 1 220px;
+            margin: 20px;
+        }
+
+        .footer-section h2,
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section li,
+        .footer-section a {
+            color: #ffffffcc;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li:hover a {
+            color: #ff00d9;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a {
+            display: inline-block;
+            margin-right: 10px;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .footer-section .socials a:hover {
+            color: #ff00d9;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0 0;
+            border-top: 1px solid #ffffff33;
+            font-size: 14px;
+            color: #ffffffcc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin: 20px 0;
+            }
+        }
+
+        .footer-section.contact a {
+            color: #ffffffcc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section.contact a:hover {
+            color: #ff00d9;
+            /* Accent color on hover */
+            text-decoration: underline;
+        }
+
+        #pageLoader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(5px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="pageLoader" class="d-none">
+        <div class="loader-content">
+            <div class="spinner-border text-info" style="width:3rem;height:3rem;"></div>
+            <p class="mt-3 text-white">Submitting your application...</p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar-1 navbar navbar-expand-lg">
+
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="img/final_logo.png" alt="Technocovai Logo">
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="menu navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">
+                            <i class="fa-solid fa-box"></i> Products
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html#services">
+                            <i class="fa-solid fa-gears"></i> Services
+                        </a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="./internship.html" data-bs-toggle="dropdown">
+
+                            <i class="fa-solid fa-graduation-cap"></i> Internships
+                        </a>
+
+                        <ul class="dropdown-menu dropdown">
+
+                            <li><a class="dropdown-item" href="fullstack.html">
+                                    <i class="fa-solid fa-code"></i> Full Stack
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="datascience.html">
+                                    <i class="fa-solid fa-database"></i> Data Science
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="powerbi.html">
+                                    <i class="fa-solid fa-chart-column"></i> Power BI
+                                </a></li>
+
+                            <li><a class="dropdown-item" href="cybersecurity.html">
+                                    <i class="fa-solid fa-shield-halved"></i> Cyber Security
+                                </a></li>
+                            <li><a class="dropdown-item" href="iot.html">
+                                    <i class="fa-solid fa-signal"></i> Embedded & IoT
+                                </a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fa-solid fa-blog"></i> Blog
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./career.html">
+                            <i class="fa-solid fa-briefcase"></i> Career
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">
+                            <i class="fa-solid fa-envelope"></i> Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-log-btn nav-link" href="./loginpage.html">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <div class="container py-5">
+
+        <h2 class="text-center mb-4">Sponsored Internship Application Form</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <div class="form-container">
+
+                    <form id="internForm">
+
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+
+                        <!-- Course -->
+                        <div class="mb-3">
+                            <label class="form-label">Select Internship</label>
+                            <select name="course" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>Cyber Security</option>
+                                <option>Full Stack Development</option>
+                                <option>Data Science</option>
+                                <option>Power BI</option>
+                                <option>Embedded & IoT</option>
+                                <option>Digital Marketing</option>
+                            </select>
+                        </div>
+
+                        <!-- College -->
+                        <div class="mb-3">
+                            <label class="form-label">College Name</label>
+                            <input type="text" name="college" class="form-control">
+                        </div>
+
+                        <!-- Year -->
+                        <div class="mb-3">
+                            <label class="form-label">Year of Study</label>
+                            <select name="year" class="form-select">
+                                <option>1st Year</option>
+                                <option>2nd Year</option>
+                                <option>3rd Year</option>
+                                <option>Final Year</option>
+                            </select>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="mb-3">
+                            <label class="form-label">Skills</label>
+                            <textarea name="skills" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="text-center mt-4">
+                            <button id="submitBtn" type="submit" class="btn btn-primary px-5 py-2">
+                                Apply Now
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const form = document.getElementById("internForm");
+        const loader = document.getElementById("pageLoader");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // 👉 SHOW FULL PAGE LOADER
+            loader.classList.remove("d-none");
+
+            const data = new URLSearchParams({
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                course: form.course.value,
+                college: form.college.value,
+                year: form.year.value,
+                skills: form.skills.value
+            });
+
+            fetch("https://script.google.com/macros/s/AKfycby5YraJRKJFVwxBlcJgtEpAb3yZW8RYGcNymZrDAxLP5oou54lZ6Uk0Hel6bvvXFxrD/exec", {
+                method: "POST",
+                body: data
+            })
+                .then(() => {
+
+                    // 👉 HIDE LOADER AFTER SUCCESS
+                    setTimeout(() => {
+                        loader.classList.add("d-none");
+                        alert("Application Submitted Successfully!");
+                        form.reset();
+                    }, 1500);
+
+                })
+                .catch(() => {
+                    loader.classList.add("d-none");
+                    alert("Error submitting form");
+                });
+        });
+    </script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const course = params.get("course");
+
+        if (course) {
+            const select = document.querySelector('[name="course"]');
+            if (select) {
+                select.value = course;
+            }
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h2>TechnoCovai</h2>
+                <p>Trusted Technology Partner delivering innovative IT solutions, web development, and software
+                    services
+                    to
+                    businesses worldwide.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="about.html#services">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Desktop Apps</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Cloud Solutions</a></li>
+                    <li><a href="#">IT Consulting</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+
+                <!-- Clickable Address -->
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&query=No+10,+Raja+Annamalai+Street,+Saibaba+Colony,+Coimbatore-641011,+Tamil+Nadu,+India"
+                        target="_blank">
+                        No 10, Raja Annamalai Street, Saibaba Colony, Coimbatore-641011, Tamil Nadu, India
+                    </a>
+                </p>
+
+                <!-- Clickable Phone -->
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919363922322">+91 9363922322</a>
+                </p>
+
+                <!-- Clickable Email -->
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@technocovai.com">support@technocovai.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Technocovai. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

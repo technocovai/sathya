@@ -235,14 +235,44 @@
                 color: transparent !important;
             }
         }
+
+        /* ADD THIS CSS */
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .company-logo {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .sheet-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #09090B;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container" id="pdf-content">
-        <div class="sheet-title">Technocovai Software Private Limited - Log Sheet</div>
+        <div class="header-container">
+            <img src="img/updated_favicon.png" alt="Technocovai Logo" class="company-logo">
 
+            <div class="sheet-title">
+                Technocovai Software Private Limited - Log Sheet
+            </div>
+        </div>
         <table class="meta-table">
             <tr>
                 <td class="label-cell">Domain Name</td>

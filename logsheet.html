@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Log Sheet - 15 Rows Landscape</title>
+    <style>
+        :root {
+            --primary-blue: #2E5FA3;
+            --light-blue-bg: #D6E4F7;
+            --dark-blue-text: #1B3A6B;
+            --border-color: #A1A1AA;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #F4F4F5;
+            margin: 0;
+            padding: 8px 10px;
+            color: #18181B;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .sheet-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #09090B;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Metadata Header Table */
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .meta-table td {
+            border: 1px solid var(--border-color);
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+
+        .label-cell {
+            background-color: var(--primary-blue);
+            color: #FFFFFF;
+            font-weight: bold;
+            width: 15%;
+        }
+
+        .value-cell {
+            background-color: var(--light-blue-bg);
+            width: 35%;
+        }
+
+        .value-cell input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 12px;
+            color: var(--dark-blue-text);
+            outline: none;
+        }
+
+        /* Main Log Table */
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .log-table th {
+            border: 1px solid var(--border-color);
+            padding: 6px 4px;
+            background-color: #E4E4E7;
+            color: #09090B;
+            font-weight: bold;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .log-table th input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            color: #09090B;
+            outline: none;
+        }
+
+        .log-table td {
+            border: 1px solid var(--border-color);
+            padding: 2px 4px;
+            height: 26px;
+            /* Compact height optimized for 15 rows */
+        }
+
+        .log-table td input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 12px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .col-date {
+            width: 11%;
+        }
+
+        .col-topic {
+            width: 29%;
+        }
+
+        .col-student {
+            width: 12%;
+        }
+
+        /* Signature Section */
+        .signature-container {
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .sig-box {
+            text-align: center;
+        }
+
+        .sig-line {
+            border-top: 1px solid #000000;
+            margin-bottom: 4px;
+            margin-top: 20px;
+        }
+
+        .sig-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #3F3F46;
+        }
+
+        /* Action bar */
+        .no-print-actions {
+            max-width: 1150px;
+            margin: 12px auto 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn-download {
+            background-color: #18181B;
+            color: #FFFFFF;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* CRITICAL FOR DOWNLOAD STYLING VALUE MATCHES */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 5mm 8mm;
+                /* Maximized vertical space for safety */
+            }
+
+            body {
+                background-color: #FFFFFF;
+                padding: 0;
+                margin: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .no-print-actions {
+                display: none !important;
+            }
+
+            .label-cell {
+                background-color: #2E5FA3 !important;
+                color: #FFFFFF !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .value-cell {
+                background-color: #D6E4F7 !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .log-table th {
+                background-color: #E4E4E7 !important;
+                color: #09090B !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            input::placeholder {
+                color: transparent !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="pdf-content">
+        <div class="sheet-title">Technocovai Software Private Limited - Log Sheet</div>
+
+        <table class="meta-table">
+            <tr>
+                <td class="label-cell">Domain Name</td>
+                <td class="value-cell"><input type="text" placeholder="Click to enter..."></td>
+                <td class="label-cell">Duration</td>
+                <td class="value-cell"><input type="text" placeholder="Click to enter..."></td>
+            </tr>
+            <tr>
+                <td class="label-cell">Trainer Name</td>
+                <td class="value-cell"><input type="text" placeholder="Click to enter..."></td>
+                <td class="label-cell">Timing</td>
+                <td class="value-cell"><input type="text" placeholder="Click to enter..."></td>
+            </tr>
+        </table>
+
+        <table class="log-table">
+            <thead>
+                <tr>
+                    <th class="col-date">Date</th>
+                    <th class="col-topic">Topic</th>
+                    <th class="col-student"><input type="text" placeholder="Enter Student Name"></th>
+                    <th class="col-student"><input type="text" placeholder="Enter Student Name"></th>
+                    <th class="col-student"><input type="text" placeholder="Enter Student Name"></th>
+                    <th class="col-student"><input type="text" placeholder="Enter Student Name"></th>
+                    <th class="col-student"><input type="text" placeholder="Enter Student Name"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Scaled to exactly 15 entry tracking rows -->
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="text-center" placeholder="YYYY-MM-DD"></td>
+                    <td><input type="text" placeholder="Type details..."></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                    <td><input type="text" class="text-center" placeholder="-"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="signature-container">
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                <div class="sig-label">Trainer Signature</div>
+            </div>
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                <div class="sig-label">Authorized Reviewer Signature</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grouped Action Buttons Bar -->
+    <div class="no-print-actions">
+        <button type="button" class="btn-download" onclick="window.print()">Print / Save PDF</button>
+        <button type="button" class="btn-download" onclick="downloadDirectPDF()">Direct Download File</button>
+    </div>
+
+    <!-- Include html2pdf.js Dependency from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+        function downloadDirectPDF() {
+            const element = document.getElementById('pdf-content');
+
+            const options = {
+                margin: [5, 8, 5, 8],
+                filename: 'Technocovai_15_Row_Log_Sheet.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+            };
+
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
+
+</body>
+
+</html>
